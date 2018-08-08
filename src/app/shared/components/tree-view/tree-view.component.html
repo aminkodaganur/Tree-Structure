@@ -1,0 +1,11 @@
+<div class="tree-demo-app">
+    <div class="tree-content" *ngFor="let group of groupData">
+        <tree 
+            [tree]="group"
+            (nodeSelected)="onNodeSelected($event)"
+            (nodeCreated)="handleCreated($event)"
+            (nodeRemoved)="handleRemoved($event)"
+            #treeView>
+        </tree>
+    </div>
+</div>

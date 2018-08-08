@@ -1,0 +1,9 @@
+<div class="tree-demo-app">
+    <div class="tree-content">
+        <tree [tree]="custom"
+            #treeView 
+            (nodeSelected)="onNodeSelected($event)"
+            (nodeCreated)="handleCreated($event)">
+        </tree>
+    </div>
+</div>
