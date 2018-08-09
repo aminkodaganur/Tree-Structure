@@ -5,11 +5,17 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { TreeModule } from 'ng2-tree';
 import { PopupModule } from '@progress/kendo-angular-popup';
 
-import { TreeViewComponent } from './tree-view';
-import { HirarchicalTreeComponent } from './hirarchical-tree';
-import { GridContextMenuComponent } from './grid-context-menu';
+import { TreeViewComponent, HirarchicalTreeComponent, GridContextMenuComponent, inputBtnComponent } from './components';
+
+import { OdsAdminService } from './services';
 
 @NgModule({
+    declarations: [
+        TreeViewComponent,
+        HirarchicalTreeComponent,
+        GridContextMenuComponent,
+        inputBtnComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -21,14 +27,11 @@ import { GridContextMenuComponent } from './grid-context-menu';
     exports: [
         TreeViewComponent,
         HirarchicalTreeComponent,
-        GridContextMenuComponent
-    ],
-    declarations: [
-        TreeViewComponent,
-        HirarchicalTreeComponent,
-        GridContextMenuComponent
+        GridContextMenuComponent,
+        inputBtnComponent
     ],
     providers: [
+        OdsAdminService
     ]
 })
 export class SharedComponentsModule {

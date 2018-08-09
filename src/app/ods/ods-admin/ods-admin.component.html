@@ -1,38 +1,42 @@
 <section class="row">
   <article class="col-sm-6">
-    <!-- Left side section for Team management -->
+    <!-- Left side section for Team Management -->
     <h2>Team Management</h2>
-    <!-- Tree view custom component -->
-    <!-- <my-tree-view [(tree)]="data">
-    </my-tree-view> -->
+    <app-input-btn 
+        (clickAddItem)="onClickAddTeam($event)"
+        [placeHolderText]="'Enter new team name'">
+    </app-input-btn>
+    <div class="col-xs-12">
+      <!-- Tree view custom component -->
+      <div>
+        <my-tree-view
+          #teamTreeView 
+          [(items)]="teamDataMock"
+          (onNodeCreated)="onTeamCreated($event)"
+          (onNodeRenamed)="onTeamRenamed($event)"
+          (onNodeRemoved)="onTeamRemoved($event)">
+        </my-tree-view>
+      </div>
+    </div>
   </article>
   <article class="col-sm-6">
     <!-- Right side section for Group Management -->
     <h2>Group Management</h2>
-    <div class="input-group mb-3">
-      <!-- input text and button to add new group -->
-      <input 
-          type="text" 
-          class="form-control" 
-          placeholder="Add Group Name" 
-          aria-label="add-group-name" 
-          aria-describedby="basic-addon2"
-          [(ngModel)]="groupName">
-      <div class="input-group-append">
-        <button 
-          class="btn btn-outline-secondary" 
-          type="button" 
-          (click)="onClickAddGroup()">
-          Add
-        </button>
-      </div>
-    </div>
+    <app-input-btn 
+        (clickAddItem)="onClickAddGroup($event)"
+        [placeHolderText]="'Enter new group Name'">
+    </app-input-btn>
     <div class="col-xs-12">
       <!-- Tree view custom component -->
-      <my-tree-view 
-          [(groupData)]="groupDataMock"
-          (onNodeRemoved)="onNodeRemoved($event)">
-      </my-tree-view>
+      <div>
+        <my-tree-view 
+          #groupTreeView
+          [(items)]="groupDataMock"
+          (onNodeCreated)="onGroupCreated($event)"
+          (onNodeRenamed)="onGroupRenamed($event)"
+          (onNodeRemoved)="onGroupRemoved($event)">
+        </my-tree-view>
+      </div>
     </div>
   </article>
 </section>

@@ -1,10 +1,12 @@
 <div class="tree-demo-app">
-    <div class="tree-content" *ngFor="let group of groupData">
+    <div class="tree-content" *ngFor="let item of items; let i = index">
         <tree 
-            [tree]="group"
-            (nodeSelected)="onNodeSelected($event)"
+            [tree]="items[i]"
+            (clickAddNewItem)="handleAddItem($event)"
             (nodeCreated)="handleCreated($event)"
+            (nodeRenamed)="handleRenamed($event)"
             (nodeRemoved)="handleRemoved($event)"
+            (nodeSelected)="handleSelected($event)"
             #treeView>
         </tree>
     </div>

@@ -1,0 +1,19 @@
+<div class="input-group mb-3">
+    <!-- input text and button to add new group -->
+    <input 
+        type="text" 
+        class="form-control" 
+        [placeholder]="placeHolderText" 
+        aria-label="add-group-name" 
+        aria-describedby="basic-addon2"
+        [(ngModel)]="itemName">
+    <div class="input-group-append">
+      <button 
+        class="btn btn-primary" 
+        type="button" 
+        [disabled]="itemName == ''"
+        (click)="onClickAddItem($event)">
+        Add
+      </button>
+    </div>
+</div>

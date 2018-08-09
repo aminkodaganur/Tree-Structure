@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TreeModel, NodeEvent } from 'ng2-tree';
 
 @Component({
@@ -8,41 +8,30 @@ import { TreeModel, NodeEvent } from 'ng2-tree';
 })
 export class TreeViewComponent implements OnInit {
 
-  @Input() groupData: TreeModel[];
+  @Input() items: TreeModel[];
+  @Output() onNodeCreated = new EventEmitter();
+  @Output() onNodeRenamed = new EventEmitter();
   @Output() onNodeRemoved = new EventEmitter();
-  // @ViewChild('treeView') treeView: any;
+  @Output() onClickAddNewItem = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  // onNodeSelected(e: NodeEvent): void {
-  //   console.log(e);
-  // }
-  // handleCreated($event) {
-  //   console.log($event);
-  //   // console.log(this.treeView['tree']);
-  //   if (this.treeView && this.treeView['tree']) {
-  //     const treeModel = this.buildModelFromTree(this.treeView['tree']);
-  //     console.log('Tree View', treeModel);
-  //   }
-  // }
-  handleRemoved(event: NodeEvent){
+  handleAddItem(event) {
+    this.onClickAddNewItem.emit(event);
+  }
+  handleSelected(e: NodeEvent) {
+    console.log(e);
+  }
+  handleCreated(event: NodeEvent) {
+    this.onNodeCreated.emit(event);
+  }
+  handleRenamed(event: NodeEvent) {
+    this.onNodeRenamed.emit(event);
+  }
+  handleRemoved(event: NodeEvent) {
     this.onNodeRemoved.emit(event);
   }
-  // buildModelFromTree(tree) {
-  //   let model: any = {
-  //     value: '',
-  //     children: [],
-  //     settings: tree.node.settings
-  //   };
-  //   model.value = tree.node.value;
-  //   if (tree.children) {
-  //     tree.children.forEach(child => {
-  //       model.children.push(this.buildModelFromTree(child));
-  //     });
-  //   }
-  //   return model;
-  // }
 
 }
