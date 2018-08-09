@@ -10,7 +10,6 @@
       <!-- Tree view custom component -->
       <div>
         <my-tree-view
-          #teamTreeView 
           [(items)]="teamDataMock"
           (onNodeCreated)="onTeamCreated($event)"
           (onNodeRenamed)="onTeamRenamed($event)"
@@ -30,7 +29,6 @@
       <!-- Tree view custom component -->
       <div>
         <my-tree-view 
-          #groupTreeView
           [(items)]="groupDataMock"
           (onNodeCreated)="onGroupCreated($event)"
           (onNodeRenamed)="onGroupRenamed($event)"

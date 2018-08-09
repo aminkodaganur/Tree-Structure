@@ -15,8 +15,8 @@ export class inputBtnComponent implements OnInit {
     ngOnInit() {
     }
     onClickAddItem(event: any) {
-        let newItem = this.odsAdminService.onClickAddNewItem(this.itemName);
-        this.clickAddItem.emit(newItem);
+        //let newItem = this.odsAdminService.onClickAddNewItem(this.itemName);
+        this.clickAddItem.emit(this.itemName);
         this.itemName = '';
     }
 }

@@ -3,19 +3,11 @@ import { NodeMenuItemAction } from 'ng2-tree';
 
 @Injectable()
 export class OdsAdminService {
-    settings = {
-        menuItems: [
-            { action: NodeMenuItemAction.NewFolder, name: 'Add Group', cssClass: '' },
-            { action: NodeMenuItemAction.NewTag, name: 'Add Function', cssClass: '' },
-            { action: NodeMenuItemAction.Remove, name: 'Remove', cssClass: '' },
-            { action: NodeMenuItemAction.Rename, name: 'Rename', cssClass: '' }
-        ]
-    };
     constructor() { }
 
     extractTreeModelData(treeElementRef: any) {
         let _treeData = [];
-        let trees = treeElementRef['treeView']['_results'];
+        let trees = treeElementRef['_results'];
         trees.forEach(tree => {
             if (tree && tree['tree']) {
                 _treeData.push(this._buildTreeDataModel(tree['tree']));
@@ -24,8 +16,8 @@ export class OdsAdminService {
         return _treeData || [];
     }
 
-    onClickAddNewItem(itemName: string) {
-        let newItem = { settings: this.settings, value: itemName, children: [] };
+    onClickAddNewItem(itemName: string, menuSettings: any) {
+        let newItem = { settings: menuSettings, value: itemName, children: [] };
         return newItem;
     }
 

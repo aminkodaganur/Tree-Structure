@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChildren } from '@angular/core';
 import { TreeModel, NodeEvent } from 'ng2-tree';
 
 @Component({
@@ -13,11 +13,13 @@ export class TreeViewComponent implements OnInit {
   @Output() onNodeRenamed = new EventEmitter();
   @Output() onNodeRemoved = new EventEmitter();
   @Output() onClickAddNewItem = new EventEmitter();
+  @ViewChildren('treeView') treeView = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
+  // event handlers for tree view component.
   handleAddItem(event) {
     this.onClickAddNewItem.emit(event);
   }
@@ -25,12 +27,13 @@ export class TreeViewComponent implements OnInit {
     console.log(e);
   }
   handleCreated(event: NodeEvent) {
-    this.onNodeCreated.emit(event);
+    this.onNodeCreated.emit(this.treeView);
   }
   handleRenamed(event: NodeEvent) {
-    this.onNodeRenamed.emit(event);
+    this.onNodeRenamed.emit(this.treeView);
   }
   handleRemoved(event: NodeEvent) {
+    event['treeView'] = this.treeView;
     this.onNodeRemoved.emit(event);
   }
 

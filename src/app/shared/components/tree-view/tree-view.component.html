@@ -1,6 +1,7 @@
 <div class="tree-demo-app">
     <div class="tree-content" *ngFor="let item of items; let i = index">
         <tree 
+            #treeView
             [tree]="items[i]"
             (clickAddNewItem)="handleAddItem($event)"
             (nodeCreated)="handleCreated($event)"
