@@ -13,6 +13,7 @@ export class TreeViewComponent implements OnInit {
   @Output() onNodeRenamed = new EventEmitter();
   @Output() onNodeRemoved = new EventEmitter();
   @Output() onClickAddNewItem = new EventEmitter();
+  @Output() onNodeSelected = new EventEmitter();
   @ViewChildren('treeView') treeView = new EventEmitter();
 
   constructor() { }
@@ -23,8 +24,8 @@ export class TreeViewComponent implements OnInit {
   handleAddItem(event) {
     this.onClickAddNewItem.emit(event);
   }
-  handleSelected(e: NodeEvent) {
-    console.log(e);
+  handleSelected(event: NodeEvent) {
+    this.onNodeSelected.emit(event);
   }
   handleCreated(event: NodeEvent) {
     this.onNodeCreated.emit(this.treeView);

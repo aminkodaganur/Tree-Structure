@@ -1,32 +1,18 @@
-<!-- Team Management -->
-<!-- <h2>Team Management</h2>
-<div class="input-group mb-3"> -->
-  <!-- input text and button to add new Team -->
-  <!-- <input 
-      type="text" 
-      class="form-control" 
-      placeholder="Add Team Name" 
-      aria-label="add-group-name" 
-      aria-describedby="basic-addon2"
-      [(ngModel)]="groupName">
-  <div class="input-group-append">
-    <button 
-      class="btn btn-primary" 
-      type="button" 
-      [disabled]="groupName == ''"
-      (click)="onClickAddGroup()">
-      Add
-    </button>
-  </div>
-</div> -->
-<!-- <div class="col-xs-12"> -->
-  <!-- Tree view custom component -->
-  <!-- <div  *ngFor="let group of groupDataMock; let i = index" >
+<!-- Left side section for Team Management -->
+<h2>Team Management</h2>
+<app-input-btn 
+  (clickAddItem)="onClickAddTeam($event)" 
+  [placeHolderText]="'Enter new team name'">
+</app-input-btn>
+<div class="col-xs-12">
+  <!-- Tree view component -->
+  <div>
     <my-tree-view 
-      #treeView
-      [(groupData)]="groupDataMock[i]"
-      (onNodeRenamed)="onNodeRenamed($event)"
-      (onNodeRemoved)="onNodeRemoved($event)">
+      [(items)]="teamDataMock" 
+      (onNodeCreated)="onTeamCreated($event)" 
+      (onNodeRenamed)="onTeamRenamed($event)" 
+      (onNodeRemoved)="onTeamRemoved($event)"
+      (onNodeSelected)="onTeamSelected($event)">
     </my-tree-view>
   </div>
-</div> -->
+</div>

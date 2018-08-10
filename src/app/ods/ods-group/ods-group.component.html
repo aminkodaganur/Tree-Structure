@@ -1,0 +1,18 @@
+<!-- Right side section for Group Management -->
+<h2>Group Management</h2>
+<app-input-btn 
+  (clickAddItem)="onClickAddGroup($event)" 
+  [placeHolderText]="'Enter new group Name'">
+</app-input-btn>
+<div class="col-xs-12">
+  <!-- Tree view custom component -->
+  <div>
+    <my-tree-view 
+      [(items)]="groupDataMock" 
+      (onNodeCreated)="onGroupCreated($event)" 
+      (onNodeRenamed)="onGroupRenamed($event)"
+      (onNodeRemoved)="onGroupRemoved($event)"
+      (onNodeSelected)="onGroupSelected($event)">
+    </my-tree-view>
+  </div>
+</div>

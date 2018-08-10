@@ -1,40 +1,14 @@
 <section class="row">
-  <article class="col-sm-6">
-    <!-- Left side section for Team Management -->
-    <h2>Team Management</h2>
-    <app-input-btn 
-        (clickAddItem)="onClickAddTeam($event)"
-        [placeHolderText]="'Enter new team name'">
-    </app-input-btn>
-    <div class="col-xs-12">
-      <!-- Tree view custom component -->
-      <div>
-        <my-tree-view
-          [(items)]="teamDataMock"
-          (onNodeCreated)="onTeamCreated($event)"
-          (onNodeRenamed)="onTeamRenamed($event)"
-          (onNodeRemoved)="onTeamRemoved($event)">
-        </my-tree-view>
-      </div>
-    </div>
+  <article class="col-sm-5">
+    <app-ods-team [permission]="permissionValue"></app-ods-team>
   </article>
-  <article class="col-sm-6">
-    <!-- Right side section for Group Management -->
-    <h2>Group Management</h2>
-    <app-input-btn 
-        (clickAddItem)="onClickAddGroup($event)"
-        [placeHolderText]="'Enter new group Name'">
-    </app-input-btn>
-    <div class="col-xs-12">
-      <!-- Tree view custom component -->
-      <div>
-        <my-tree-view 
-          [(items)]="groupDataMock"
-          (onNodeCreated)="onGroupCreated($event)"
-          (onNodeRenamed)="onGroupRenamed($event)"
-          (onNodeRemoved)="onGroupRemoved($event)">
-        </my-tree-view>
-      </div>
-    </div>
+  <article class="col-sm-2">
+    <app-input-radio-btn 
+        (onChange)="onRadioChange($event)"
+        [inputValues]="permissions">
+    </app-input-radio-btn>
+  </article>
+  <article class="col-sm-5">
+    <app-ods-group [permission]="permissionValue"></app-ods-group>
   </article>
 </section>

@@ -1,0 +1,8 @@
+.input-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.input-radio-button {
+    margin: 5px;
+}
