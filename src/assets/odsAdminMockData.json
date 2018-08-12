@@ -1,0 +1,128 @@
+{
+    "groupMockData": [
+        {
+            "value": "NewGroup01",
+            "children": [
+                {
+                    "value": "Group01Child01",
+                    "children": [
+                        {
+                            "value": "Group01Child01SubChild01"
+                        },
+                        {
+                            "value": "Group01Child01SubChild02"
+                        },
+                        {
+                            "value": "Group01Child01SubChild03"
+                        }
+                    ]
+                },
+                {
+                    "value": "Group01Child02",
+                    "children": [
+                        {
+                            "value": "Group01Child02SubChild01"
+                        },
+                        {
+                            "value": "Group01Child02SubChild02",
+                            "children": [
+                                {
+                                    "value": "Group01Child02SubChild02BelowSubChild01"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "NewGroup02",
+            "children": [
+                {
+                    "value": "Group02Child01",
+                    "children": [
+                        {
+                            "value": "Group02Child01SubChild01"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "NewGroup03",
+            "children": [
+                {
+                    "value": "Group03Child01",
+                    "children": [
+                        {
+                            "value": "Group03Child01SubChild01"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "teamMockData": [
+        {
+            "value": "NewTeam01",
+            "children": [
+                {
+                    "value": "Team01Child01",
+                    "children": [
+                        {
+                            "value": "Team01Child01SubChild01"
+                        },
+                        {
+                            "value": "Team01Child01SubChild02"
+                        },
+                        {
+                            "value": "Team01Child01SubChild03"
+                        }
+                    ]
+                },
+                {
+                    "value": "Team01Child02",
+                    "children": [
+                        {
+                            "value": "Team01Child02SubChild01"
+                        },
+                        {
+                            "value": "Team01Child02SubChild02",
+                            "children": [
+                                {
+                                    "value": "Team01Child02SubChild02BelowSubChild01"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "NewTeam02",
+            "children": [
+                {
+                    "value": "Team02Child01",
+                    "children": [
+                        {
+                            "value": "Team02Child01SubChild01"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "NewTeam03",
+            "children": [
+                {
+                    "value": "Team03Child01",
+                    "children": [
+                        {
+                            "value": "Team03Child01SubChild01"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

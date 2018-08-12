@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
@@ -11,7 +12,7 @@ import {
     inputBtnComponent, inputRadioBtnComponent
 } from './components';
 
-import { OdsAdminService } from './services';
+import { OdsAdminService, ApiService } from './services';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { OdsAdminService } from './services';
     ],
     imports: [
         CommonModule,
+        HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
         MatRadioModule,
@@ -38,7 +40,8 @@ import { OdsAdminService } from './services';
         inputRadioBtnComponent
     ],
     providers: [
-        OdsAdminService
+        OdsAdminService,
+        ApiService
     ]
 })
 export class SharedComponentsModule {
